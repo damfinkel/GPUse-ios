@@ -8,10 +8,12 @@
 
 import UIKit
 import GPUImage
+import Starscream
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, WebSocketDelegate {
 
     let _view: MainScreenView = MainScreenView.loadFromNib()
+    private let _socket : WebSocket = WebSocket(url: URL(string: "ws://localhost:3000/FileProcessingChannel")!);
     
     override func loadView() {
         view = _view
@@ -20,10 +22,30 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        _view.goldLabel.text = "0";
-        _view.timeLabel.text = "0 seconds";
+        _view.goldLabel.text = "0"
+        _view.timeLabel.text = "0 seconds"
+        
+        _socket.delegate = self
+        _socket.connect()
     }
     
+    // MARK: WebsocketDelegate
+    
+    func websocketDidConnect(socket: WebSocket) {
+        print("websocket is connected")
+    }
+    
+    func websocketDidDisconnect(socket: WebSocket, error: NSError?) {
+        print("websocket is disconnected: \(error?.localizedDescription)")
+    }
+    
+    func websocketDidReceiveMessage(socket: WebSocket, text: String) {
+        print("got some text: \(text)")
+    }
+    
+    func websocketDidReceiveData(socket: WebSocket, data: Data) {
+        print("got some data: \(data.count)")
+    }
 }
 
 extension UIView {

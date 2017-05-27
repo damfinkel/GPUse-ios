@@ -5,6 +5,9 @@
       location = "group:GPUse.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:Starscream/Starscream.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:GPUImage2/framework/GPUImage.xcodeproj">
    </FileRef>
 </Workspace>
