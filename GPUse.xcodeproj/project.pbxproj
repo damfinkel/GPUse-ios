@@ -12,6 +12,9 @@
 		2DFF6DB41EDA17BD00A682CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DFF6DB21EDA17BD00A682CD /* Main.storyboard */; };
 		2DFF6DB61EDA17BD00A682CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DFF6DB51EDA17BD00A682CD /* Assets.xcassets */; };
 		2DFF6DB91EDA17BD00A682CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DFF6DB71EDA17BD00A682CD /* LaunchScreen.storyboard */; };
+		2DFF6DC11EDA197400A682CD /* MainScreenView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DFF6DC01EDA197400A682CD /* MainScreenView.xib */; };
+		2DFF6DC31EDA198D00A682CD /* MainScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DFF6DC21EDA198D00A682CD /* MainScreenView.swift */; };
+		2DFF6DC51EDA1F4800A682CD /* Starscream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DFF6DC41EDA1F4800A682CD /* Starscream.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		2DFF6DB51EDA17BD00A682CD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2DFF6DB81EDA17BD00A682CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2DFF6DBA1EDA17BD00A682CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2DFF6DC01EDA197400A682CD /* MainScreenView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainScreenView.xib; sourceTree = "<group>"; };
+		2DFF6DC21EDA198D00A682CD /* MainScreenView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainScreenView.swift; sourceTree = "<group>"; };
+		2DFF6DC41EDA1F4800A682CD /* Starscream.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Starscream.framework; path = Carthage/Build/iOS/Starscream.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DFF6DC51EDA1F4800A682CD /* Starscream.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -39,6 +46,7 @@
 			isa = PBXGroup;
 			children = (
 				2DFF6DAD1EDA17BD00A682CD /* GPUse */,
+				2DFF6DC41EDA1F4800A682CD /* Starscream.framework */,
 				2DFF6DAC1EDA17BD00A682CD /* Products */,
 			);
 			sourceTree = "<group>";
@@ -60,6 +68,8 @@
 				2DFF6DB51EDA17BD00A682CD /* Assets.xcassets */,
 				2DFF6DB71EDA17BD00A682CD /* LaunchScreen.storyboard */,
 				2DFF6DBA1EDA17BD00A682CD /* Info.plist */,
+				2DFF6DC01EDA197400A682CD /* MainScreenView.xib */,
+				2DFF6DC21EDA198D00A682CD /* MainScreenView.swift */,
 			);
 			path = GPUse;
 			sourceTree = "<group>";
@@ -127,6 +137,7 @@
 				2DFF6DB91EDA17BD00A682CD /* LaunchScreen.storyboard in Resources */,
 				2DFF6DB61EDA17BD00A682CD /* Assets.xcassets in Resources */,
 				2DFF6DB41EDA17BD00A682CD /* Main.storyboard in Resources */,
+				2DFF6DC11EDA197400A682CD /* MainScreenView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,6 +149,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2DFF6DB11EDA17BD00A682CD /* ViewController.swift in Sources */,
+				2DFF6DC31EDA198D00A682CD /* MainScreenView.swift in Sources */,
 				2DFF6DAF1EDA17BD00A682CD /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -264,6 +276,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = AJBMDU64UK;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = GPUse/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = wolox.GPUse;
@@ -277,6 +293,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = AJBMDU64UK;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = GPUse/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = wolox.GPUse;
