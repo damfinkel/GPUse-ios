@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:Swift-ActionCableClient/ActionCableClient.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:GPUse.xcodeproj">
    </FileRef>
    <FileRef

@@ -7,8 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2D1BD3D31EDA23510063FF61 /* Starscream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D1BD3D21EDA23510063FF61 /* Starscream.framework */; };
-		2D1BD3D41EDA23510063FF61 /* Starscream.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2D1BD3D21EDA23510063FF61 /* Starscream.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2D1BD3D61EDA283F0063FF61 /* File.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2D1BD3D51EDA283F0063FF61 /* File.txt */; };
+		2D1BD3D81EDA32AD0063FF61 /* heyeyea.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2D1BD3D71EDA32AD0063FF61 /* heyeyea.jpg */; };
+		2D1BD3E61EDA3BB80063FF61 /* ActionCableClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D1BD3E51EDA3BB80063FF61 /* ActionCableClient.framework */; };
+		2D1BD3E71EDA3BB80063FF61 /* ActionCableClient.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2D1BD3E51EDA3BB80063FF61 /* ActionCableClient.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2D1BD3E81EDA3BBF0063FF61 /* Starscream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D1BD3D21EDA23510063FF61 /* Starscream.framework */; };
+		2D1BD3E91EDA3BBF0063FF61 /* Starscream.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2D1BD3D21EDA23510063FF61 /* Starscream.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2DFF6DAF1EDA17BD00A682CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DFF6DAE1EDA17BD00A682CD /* AppDelegate.swift */; };
 		2DFF6DB11EDA17BD00A682CD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DFF6DB01EDA17BD00A682CD /* ViewController.swift */; };
 		2DFF6DB41EDA17BD00A682CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DFF6DB21EDA17BD00A682CD /* Main.storyboard */; };
@@ -28,7 +32,8 @@
 			dstSubfolderSpec = 10;
 			files = (
 				2DFF6DCB1EDA21AD00A682CD /* GPUImage.framework in Embed Frameworks */,
-				2D1BD3D41EDA23510063FF61 /* Starscream.framework in Embed Frameworks */,
+				2D1BD3E91EDA3BBF0063FF61 /* Starscream.framework in Embed Frameworks */,
+				2D1BD3E71EDA3BB80063FF61 /* ActionCableClient.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -37,6 +42,9 @@
 
 /* Begin PBXFileReference section */
 		2D1BD3D21EDA23510063FF61 /* Starscream.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Starscream.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D1BD3D51EDA283F0063FF61 /* File.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = File.txt; sourceTree = "<group>"; };
+		2D1BD3D71EDA32AD0063FF61 /* heyeyea.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = heyeyea.jpg; path = ../../../../../Downloads/heyeyea.jpg; sourceTree = "<group>"; };
+		2D1BD3E51EDA3BB80063FF61 /* ActionCableClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ActionCableClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DFF6DAB1EDA17BD00A682CD /* GPUse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GPUse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DFF6DAE1EDA17BD00A682CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2DFF6DB01EDA17BD00A682CD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -55,7 +63,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2DFF6DCA1EDA21AD00A682CD /* GPUImage.framework in Frameworks */,
-				2D1BD3D31EDA23510063FF61 /* Starscream.framework in Frameworks */,
+				2D1BD3E81EDA3BBF0063FF61 /* Starscream.framework in Frameworks */,
+				2D1BD3E61EDA3BB80063FF61 /* ActionCableClient.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,6 +81,7 @@
 		2DFF6DA21EDA17BD00A682CD = {
 			isa = PBXGroup;
 			children = (
+				2D1BD3E51EDA3BB80063FF61 /* ActionCableClient.framework */,
 				2D1BD3D21EDA23510063FF61 /* Starscream.framework */,
 				2DFF6DC91EDA21AD00A682CD /* GPUImage.framework */,
 				2DFF6DAD1EDA17BD00A682CD /* GPUse */,
@@ -99,6 +109,8 @@
 				2DFF6DBA1EDA17BD00A682CD /* Info.plist */,
 				2DFF6DC01EDA197400A682CD /* MainScreenView.xib */,
 				2DFF6DC21EDA198D00A682CD /* MainScreenView.swift */,
+				2D1BD3D51EDA283F0063FF61 /* File.txt */,
+				2D1BD3D71EDA32AD0063FF61 /* heyeyea.jpg */,
 			);
 			path = GPUse;
 			sourceTree = "<group>";
@@ -166,8 +178,10 @@
 			files = (
 				2DFF6DB91EDA17BD00A682CD /* LaunchScreen.storyboard in Resources */,
 				2DFF6DB61EDA17BD00A682CD /* Assets.xcassets in Resources */,
+				2D1BD3D81EDA32AD0063FF61 /* heyeyea.jpg in Resources */,
 				2DFF6DB41EDA17BD00A682CD /* Main.storyboard in Resources */,
 				2DFF6DC11EDA197400A682CD /* MainScreenView.xib in Resources */,
+				2D1BD3D61EDA283F0063FF61 /* File.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

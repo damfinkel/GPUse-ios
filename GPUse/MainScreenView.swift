@@ -13,5 +13,6 @@ class MainScreenView: UIView {
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var goldLabel: UILabel!
     @IBOutlet weak var connectButton: UIButton!
+    @IBOutlet weak var testImage: UIImageView!
 
 }
