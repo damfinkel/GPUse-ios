@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D1BD3BA1EDA224F0063FF61 /* Starscream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DFF6DC41EDA1F4800A682CD /* Starscream.framework */; };
+		2D1BD3BB1EDA224F0063FF61 /* Starscream.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2DFF6DC41EDA1F4800A682CD /* Starscream.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2DFF6DAF1EDA17BD00A682CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DFF6DAE1EDA17BD00A682CD /* AppDelegate.swift */; };
 		2DFF6DB11EDA17BD00A682CD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DFF6DB01EDA17BD00A682CD /* ViewController.swift */; };
 		2DFF6DB41EDA17BD00A682CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DFF6DB21EDA17BD00A682CD /* Main.storyboard */; };
@@ -15,7 +17,24 @@
 		2DFF6DC11EDA197400A682CD /* MainScreenView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DFF6DC01EDA197400A682CD /* MainScreenView.xib */; };
 		2DFF6DC31EDA198D00A682CD /* MainScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DFF6DC21EDA198D00A682CD /* MainScreenView.swift */; };
 		2DFF6DC51EDA1F4800A682CD /* Starscream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DFF6DC41EDA1F4800A682CD /* Starscream.framework */; };
+		2DFF6DCA1EDA21AD00A682CD /* GPUImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DFF6DC91EDA21AD00A682CD /* GPUImage.framework */; };
+		2DFF6DCB1EDA21AD00A682CD /* GPUImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2DFF6DC91EDA21AD00A682CD /* GPUImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		2DFF6DCC1EDA21AD00A682CD /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				2DFF6DCB1EDA21AD00A682CD /* GPUImage.framework in Embed Frameworks */,
+				2D1BD3BB1EDA224F0063FF61 /* Starscream.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		2DFF6DAB1EDA17BD00A682CD /* GPUse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GPUse.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -28,6 +47,7 @@
 		2DFF6DC01EDA197400A682CD /* MainScreenView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainScreenView.xib; sourceTree = "<group>"; };
 		2DFF6DC21EDA198D00A682CD /* MainScreenView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainScreenView.swift; sourceTree = "<group>"; };
 		2DFF6DC41EDA1F4800A682CD /* Starscream.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Starscream.framework; path = Carthage/Build/iOS/Starscream.framework; sourceTree = "<group>"; };
+		2DFF6DC91EDA21AD00A682CD /* GPUImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GPUImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +56,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2DFF6DC51EDA1F4800A682CD /* Starscream.framework in Frameworks */,
+				2D1BD3BA1EDA224F0063FF61 /* Starscream.framework in Frameworks */,
+				2DFF6DCA1EDA21AD00A682CD /* GPUImage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -45,6 +67,7 @@
 		2DFF6DA21EDA17BD00A682CD = {
 			isa = PBXGroup;
 			children = (
+				2DFF6DC91EDA21AD00A682CD /* GPUImage.framework */,
 				2DFF6DAD1EDA17BD00A682CD /* GPUse */,
 				2DFF6DC41EDA1F4800A682CD /* Starscream.framework */,
 				2DFF6DAC1EDA17BD00A682CD /* Products */,
@@ -84,6 +107,7 @@
 				2DFF6DA71EDA17BD00A682CD /* Sources */,
 				2DFF6DA81EDA17BD00A682CD /* Frameworks */,
 				2DFF6DA91EDA17BD00A682CD /* Resources */,
+				2DFF6DCC1EDA21AD00A682CD /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -324,6 +348,7 @@
 				2DFF6DBF1EDA17BD00A682CD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
