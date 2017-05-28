@@ -13,7 +13,7 @@ import ActionCableClient
 class ViewController: UIViewController {
 
     let _view: MainScreenView = MainScreenView.loadFromNib()
-    fileprivate let _client : ActionCableClient = ActionCableClient(url: URL(string: "wss://763bba6f.ngrok.io/cable")!);
+    fileprivate let _client : ActionCableClient = ActionCableClient(url: URL(string: "wss://823b2419.ngrok.io/cable?address=holacapi")!);
     fileprivate var _roomChannel : Channel?
     
     override func loadView() {
@@ -48,17 +48,6 @@ class ViewController: UIViewController {
     }
     
     func didPressConnect(sender: UIButton) {
-//        let path = URL(string:Bundle.main.path(forResource:"File", ofType: "txt")!)
-//        do {
-//            let myFilter = try BasicOperation(fragmentShaderFile:path!, numberOfInputs:1)
-//            let myFilter = try BasicOperation
-////            let myFilter = SmoothToonFilter();
-//            let testImage = UIImage(named:"heyeyea.jpg")!
-//            let filteredImage = testImage.filterWithOperation(myFilter)
-//            _view.testImage.image = filteredImage
-//        } catch {
-//            print("ERROR FILTERING")
-//        }
     }
     
     func toJson(dictionary: Dictionary<String, Any>) -> String {
@@ -78,6 +67,44 @@ class ViewController: UIViewController {
         }
         return "invalid string"
     }
+    
+    func fetchImage(urlString: String, handler: @escaping (UIImage) -> ()) {
+        let fileUrl = urlString
+        
+        // Creating a session object with the default configuration.
+        // You can read more about it here https://developer.apple.com/reference/foundation/urlsessionconfiguration
+        let session = URLSession(configuration: .default)
+        
+        // Define a download task. The download task will download the contents of the URL as a Data object and then you can do what you wish with that data.
+        let downloadPicTask = session.dataTask(with: URLRequest(url:URL(string: fileUrl)!)) { (data, response, error) in
+            // The download has finished.
+            if let e = error {
+                print("Error downloading cat picture: \(e)")
+            } else {
+                // No errors found.
+                // It would be weird if we didn't have a response, so check for that too.
+                if let res = response as? HTTPURLResponse {
+                    print("Downloaded cat picture with response code \(res.statusCode)")
+                    if let imageData = data {
+                        // Finally convert that Data into an image and do what you wish with it.
+                        DispatchQueue.main.sync {
+                            handler(UIImage(data: imageData)!)
+                        }
+                    } else {
+                        print("Couldn't get image: Image is nil")
+                    }
+                } else {
+                    print("Couldn't get response code for some reason")
+                }
+            }
+        }
+        downloadPicTask.resume()
+    }
+    
+    func filteredImage(image : UIImage) -> UIImage {
+        let filter = ColorInversion()
+        return image.filterWithOperation(filter)
+    }
 
 }
 
@@ -87,13 +114,21 @@ extension ViewController {
         // Create the Room Channel
         if let roomChannel = _roomChannel {
             // Receive a message from the server. Typically a Dictionary.
-            roomChannel.onReceive = { (JSON : Any?, error : Error?) in
+            roomChannel.onReceive = { [unowned self] (JSON : Any?, error : Error?) in
                 print("Received", JSON, error)
+                if let data = JSON as? Dictionary<String, Any>, let fileUrl = data["url"] as? String {
+                    let fullUrl = "https://823b2419.ngrok.io/" +  fileUrl;
+                    self.fetchImage(urlString: fullUrl) { [unowned self] image in
+                        let filteredImage = self.filteredImage(image: image)
+                        self._view.testImage.image = filteredImage
+                    }
+                }
             }
             
             // A channel has successfully been subscribed to.
             roomChannel.onSubscribed = {
                 print("Yay!")
+                roomChannel.action("ready", with: ["message": "Hello, World!"])
             }
             
             // A channel was unsubscribed, either manually or from a client disconnect.
@@ -112,13 +147,11 @@ extension ViewController {
         // Connect!
         _client.connect()
         
-        _client.onConnected = {
+        _client.onConnected = { [unowned self] in
             if (self._roomChannel == nil) {
                 self._roomChannel = self._client.create("FileProcessingChannel")
             }
-            if let roomChannel = self._roomChannel {
-                roomChannel.action("ready", with:["address": "asldkjhaskdlahsdajhsd"])
-            }
+            self.subscribeToChannel()
         }
         
         _client.onDisconnected = {(error: Error?) in
