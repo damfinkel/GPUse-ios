@@ -12,6 +12,9 @@
 		2DFF6DB41EDA17BD00A682CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DFF6DB21EDA17BD00A682CD /* Main.storyboard */; };
 		2DFF6DB61EDA17BD00A682CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DFF6DB51EDA17BD00A682CD /* Assets.xcassets */; };
 		2DFF6DB91EDA17BD00A682CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DFF6DB71EDA17BD00A682CD /* LaunchScreen.storyboard */; };
+		9D4AACE91EDA423000B5E2D0 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 9D4AACE81EDA423000B5E2D0 /* index.html */; };
+		9D92A44A1EDA2258003D100F /* Bitcore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D92A4491EDA2258003D100F /* Bitcore.swift */; };
+		9D92A44D1EDA4127003D100F /* bundle.js in Resources */ = {isa = PBXBuildFile; fileRef = 9D92A44C1EDA4127003D100F /* bundle.js */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		2DFF6DB51EDA17BD00A682CD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2DFF6DB81EDA17BD00A682CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2DFF6DBA1EDA17BD00A682CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9D4AACE81EDA423000B5E2D0 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = index.html; path = GPUse/JavascriptLibraries/index.html; sourceTree = "<group>"; };
+		9D92A4491EDA2258003D100F /* Bitcore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bitcore.swift; sourceTree = "<group>"; };
+		9D92A44C1EDA4127003D100F /* bundle.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = bundle.js; path = GPUse/JavascriptLibraries/bundle.js; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +44,7 @@
 		2DFF6DA21EDA17BD00A682CD = {
 			isa = PBXGroup;
 			children = (
+				9D92A44B1EDA4112003D100F /* Javascript */,
 				2DFF6DAD1EDA17BD00A682CD /* GPUse */,
 				2DFF6DAC1EDA17BD00A682CD /* Products */,
 			);
@@ -60,8 +67,18 @@
 				2DFF6DB51EDA17BD00A682CD /* Assets.xcassets */,
 				2DFF6DB71EDA17BD00A682CD /* LaunchScreen.storyboard */,
 				2DFF6DBA1EDA17BD00A682CD /* Info.plist */,
+				9D92A4491EDA2258003D100F /* Bitcore.swift */,
 			);
 			path = GPUse;
+			sourceTree = "<group>";
+		};
+		9D92A44B1EDA4112003D100F /* Javascript */ = {
+			isa = PBXGroup;
+			children = (
+				9D4AACE81EDA423000B5E2D0 /* index.html */,
+				9D92A44C1EDA4127003D100F /* bundle.js */,
+			);
+			name = Javascript;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -124,8 +141,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D4AACE91EDA423000B5E2D0 /* index.html in Resources */,
 				2DFF6DB91EDA17BD00A682CD /* LaunchScreen.storyboard in Resources */,
 				2DFF6DB61EDA17BD00A682CD /* Assets.xcassets in Resources */,
+				9D92A44D1EDA4127003D100F /* bundle.js in Resources */,
 				2DFF6DB41EDA17BD00A682CD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -139,6 +158,7 @@
 			files = (
 				2DFF6DB11EDA17BD00A682CD /* ViewController.swift in Sources */,
 				2DFF6DAF1EDA17BD00A682CD /* AppDelegate.swift in Sources */,
+				9D92A44A1EDA2258003D100F /* Bitcore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,6 +324,7 @@
 				2DFF6DBF1EDA17BD00A682CD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
